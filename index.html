@@ -28,7 +28,7 @@ export default function CheatBuddyLanding() {
 
   useEffect(() => {
     const timer = setTimeout(() => setShowAnswer(true), 1000);
-    return () => clearTimeout(timer);
+    return () => clearInterval(timer);
   }, []);
 
   const features = [
