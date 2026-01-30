@@ -3,185 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CheatBuddy | #1 Stealth AI Assistant</title>
-    <link rel="icon" type="image/png" href="logo.png">
+    <title>CheatBuddy | #1 Undetectable AI</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #ffffff; color: #111827; scroll-behavior: smooth; }
-        .cheat-blue { background: #4f46e5; }
-        .btn-shadow { box-shadow: 0 20px 40px rgba(79, 70, 229, 0.2); }
-        .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid #f3f4f6; }
-        .pricing-card { border: 1px solid #f3f4f6; border-radius: 32px; transition: all 0.3s ease; }
-        .pricing-card:hover { border-color: #4f46e5; transform: translateY(-5px); }
-        .ai-window { background: #0f172a; border: 1px solid #1e293b; border-radius: 24px; overflow: hidden; }
+        body { font-family: 'Inter', sans-serif; background-color: #050505; color: white; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .blue-glow { box-shadow: 0 0 50px -10px #3b82f6; }
     </style>
 </head>
-<body>
+<body class="antialiased">
 
-    <nav class="fixed top-0 w-full z-50 glass-nav px-6 py-4">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <img src="logo.png" class="h-8 w-8 rounded-lg" alt="C">
-                <span class="font-extrabold text-xl tracking-tight">CheatBuddy</span>
-            </div>
-            <div class="hidden md:flex items-center gap-8 font-bold text-gray-500 text-sm">
-                <a href="#how" class="hover:text-indigo-600 transition">How It Works</a>
-                <a href="#test" class="hover:text-indigo-600 transition">Try AI</a>
-                <a href="#pricing" class="hover:text-indigo-600 transition">Pricing</a>
-                <a href="#faq" class="hover:text-indigo-600 transition">FAQ</a>
-            </div>
-            <button class="cheat-blue text-white px-6 py-2 rounded-xl font-bold text-sm btn-shadow">Dashboard</button>
+    <nav class="flex justify-between items-center px-10 py-6 max-w-7xl mx-auto">
+        <div class="text-2xl font-bold tracking-tighter">CheatBuddy</div>
+        <div class="hidden md:flex space-x-8 text-gray-400 text-sm font-medium">
+            <a href="#pricing" class="hover:text-white transition">Pricing</a>
+            <a href="#" class="hover:text-white transition">Mobile</a>
+            <a href="#" class="hover:text-white transition">Blog</a>
         </div>
+        <a href="#pricing" id="nav-btn" class="glass px-5 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-black transition">Get for Mac</a>
     </nav>
 
-    <section class="pt-64 pb-32 px-6 text-center">
-        <h1 class="text-7xl md:text-8xl font-extrabold tracking-tighter mb-8 italic">
-            Instant <span class="text-indigo-600">Invisible</span><br>AI Assistant
-        </h1>
-        <p class="text-gray-400 text-2xl font-medium mb-12 italic">The world's most advanced undetected assistant.</p>
-        <a href="#pricing" class="cheat-blue text-white px-12 py-5 rounded-3xl text-xl font-black btn-shadow inline-block">
-            Get Started — 50% Off
-        </a>
-    </section>
+    <header class="text-center mt-20 px-4">
+        <span class="text-blue-500 font-semibold text-sm tracking-widest uppercase">#1 Undetectable</span>
+        <h1 class="text-5xl md:text-7xl font-bold mt-4 tracking-tight leading-tight">AI for Learning</h1>
+        <p class="text-gray-400 mt-6 text-lg max-w-2xl mx-auto">
+            CheatBuddy takes screen captures and gives real-time answers instantly, all while staying completely invisible to exam software.
+        </p>
+        <div class="mt-10">
+            <button id="hero-btn" class="bg-blue-600 blue-glow text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-blue-500 transition scale-105">
+                Get for Mac
+            </button>
+        </div>
+    </header>
 
-    <section id="test" class="py-32 px-6 bg-slate-50">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-5xl font-extrabold italic tracking-tight mb-4">Try our AI Engine</h2>
-                <p class="text-gray-500 font-medium italic underline underline-offset-4 cursor-pointer" onclick="document.getElementById('ai-sol').classList.remove('opacity-0')">Click to solve question</p>
-            </div>
+    <section id="pricing" class="max-w-7xl mx-auto px-10 py-32">
+        <h2 class="text-4xl font-bold text-center mb-16">Simple Pricing</h2>
+        <div class="grid md:grid-cols-3 gap-8">
             
-            <div class="ai-window shadow-2xl">
-                <div class="bg-[#1e293b] px-6 py-4 flex items-center justify-between border-b border-slate-700">
-                    <div class="flex gap-2"><div class="w-3 h-3 rounded-full bg-red-500"></div><div class="w-3 h-3 rounded-full bg-yellow-500"></div><div class="w-3 h-3 rounded-full bg-green-500"></div></div>
-                    <div class="text-slate-400 text-[10px] font-black uppercase tracking-widest">CheatBuddy Phantom V4.0</div>
-                    <div class="w-10"></div>
+            <div class="glass p-8 rounded-3xl flex flex-col justify-between">
+                <div>
+                    <h3 class="text-xl font-bold">Weekly</h3>
+                    <p class="text-3xl font-bold mt-4">$9.99<span class="text-sm text-gray-500 font-normal"> / week</span></p>
+                    <ul class="mt-8 space-y-4 text-gray-400 text-sm">
+                        <li>✓ Unlimited AI responses</li>
+                        <li>✓ 100% Undetectable</li>
+                        <li>✓ Real-time screen reading</li>
+                    </ul>
                 </div>
-                <div class="grid md:grid-cols-2">
-                    <div class="p-8 border-r border-slate-800 bg-[#0f172a]">
-                        <img src="https://static.studychannel.pearsonprd.tech/courses/college-algebra/thumbnails/502ec5d5-a249-4e5d-a3db-38f6db692d32" class="rounded-lg w-full mb-6">
-                        <p class="text-slate-300 font-bold italic">"Using the graph, determine the domain and range of the function."</p>
-                    </div>
-                    <div id="ai-sol" class="p-8 bg-[#131c31] opacity-0 transition-opacity duration-700">
-                        <div class="flex items-center gap-3 mb-8"><div class="w-8 h-8 rounded-lg cheat-blue flex items-center justify-center">🚀</div><span class="text-white font-black italic text-xl">Analysis Complete</span></div>
-                        <div class="space-y-4">
-                            <div class="bg-indigo-600/10 border border-indigo-500/20 rounded-xl p-4">
-                                <p class="text-indigo-400 text-[10px] font-black uppercase tracking-widest">Domain</p>
-                                <p class="text-white font-bold text-xl">(-∞, ∞)</p>
-                            </div>
-                            <div class="bg-indigo-600/10 border border-indigo-500/20 rounded-xl p-4">
-                                <p class="text-indigo-400 text-[10px] font-black uppercase tracking-widest">Range</p>
-                                <p class="text-white font-bold text-xl">[-4, ∞)</p>
-                            </div>
-                        </div>
-                    </div>
+                <button class="mt-10 w-full bg-white text-black py-3 rounded-xl font-bold hover:opacity-90">Subscribe</button>
+            </div>
+
+            <div class="glass p-8 rounded-3xl border-blue-500 border-2 relative flex flex-col justify-between scale-105">
+                <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-xs py-1 px-4 rounded-full font-bold uppercase">Best Value</span>
+                <div>
+                    <h3 class="text-xl font-bold">Monthly</h3>
+                    <p class="text-3xl font-bold mt-4">$29.99<span class="text-sm text-gray-500 font-normal"> / month</span></p>
+                    <ul class="mt-8 space-y-4 text-gray-400 text-sm">
+                        <li>✓ Everything in Weekly</li>
+                        <li>✓ Priority AI response time</li>
+                        <li>✓ Beta access to Mobile app</li>
+                    </ul>
                 </div>
+                <button class="mt-10 w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-500">Subscribe</button>
+            </div>
+
+            <div class="glass p-8 rounded-3xl flex flex-col justify-between">
+                <div>
+                    <h3 class="text-xl font-bold">Annually</h3>
+                    <p class="text-3xl font-bold mt-4">$199.99<span class="text-sm text-gray-500 font-normal"> / year</span></p>
+                    <ul class="mt-8 space-y-4 text-gray-400 text-sm">
+                        <li>✓ Everything in Monthly</li>
+                        <li>✓ 24/7 Priority Support</li>
+                        <li>✓ Save over 40%</li>
+                    </ul>
+                </div>
+                <button class="mt-10 w-full bg-white text-black py-3 rounded-xl font-bold hover:opacity-90">Subscribe</button>
             </div>
         </div>
     </section>
 
-    <section id="pricing" class="py-32 px-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-5xl font-extrabold mb-4 italic">Pricing</h2>
-                <p class="text-gray-500 text-xl font-medium mb-4 italic">Simple, just like using CheatBuddy.</p>
-                <span class="bg-yellow-100 text-yellow-700 px-6 py-2 rounded-full text-sm font-black uppercase tracking-widest italic">50% Off - Limited Time Offer</span>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8 items-start">
-                <div class="pricing-card p-10 bg-white">
-                    <h3 class="text-2xl font-black mb-4 italic">Weekly</h3>
-                    <div class="mb-6">
-                        <span class="text-gray-400 line-through text-xl font-bold">$9.99/week</span>
-                        <div class="text-4xl font-black text-indigo-600">$4.99/week</div>
-                    </div>
-                    <div class="space-y-4 text-gray-600 font-bold text-sm mb-10 italic">
-                        <p>Privacy Guarantee</p>
-                        <p>100% Undetectable</p>
-                        <p>Supports Canvas, Brightspace, etc…⭐</p>
-                        <p>Unlimited Questions</p>
-                        <p class="text-indigo-600">Super Charge ⚡</p>
-                    </div>
-                    <button class="w-full py-4 rounded-2xl bg-slate-900 text-white font-bold hover:bg-black transition italic">Get Started 50% Off</button>
-                </div>
-
-                <div class="pricing-card p-10 bg-white border-4 border-indigo-600 relative scale-105 shadow-2xl">
-                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-indigo-600 text-white px-6 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest">Most Popular</div>
-                    <h3 class="text-2xl font-black mb-4 italic">Monthly</h3>
-                    <div class="mb-6">
-                        <span class="text-gray-400 line-through text-xl font-bold">$4.99/week</span>
-                        <div class="text-4xl font-black text-indigo-600">$2.49/week</div>
-                        <p class="text-gray-400 text-xs mt-1 italic font-bold uppercase">Billed at $9.99/month</p>
-                    </div>
-                    <div class="space-y-4 text-gray-600 font-bold text-sm mb-10 italic">
-                        <p>Privacy Guarantee</p>
-                        <p>100% Undetectable</p>
-                        <p>Supports Canvas, Brightspace, etc…⭐</p>
-                        <p>Unlimited Questions</p>
-                        <p class="text-indigo-600">Super Charge ⚡</p>
-                    </div>
-                    <button class="w-full py-5 rounded-2xl cheat-blue text-white font-black text-lg btn-shadow transition hover:scale-[1.02] italic">Get Started 50% Off</button>
-                </div>
-
-                <div class="pricing-card p-10 bg-white">
-                    <h3 class="text-2xl font-black mb-4 italic">Annual</h3>
-                    <div class="mb-6">
-                        <span class="text-gray-400 line-through text-xl font-bold">$9.99/month</span>
-                        <div class="text-4xl font-black text-indigo-600">$4.99/month</div>
-                        <p class="text-gray-400 text-xs mt-1 italic font-bold uppercase">Billed at $59.99/year</p>
-                    </div>
-                    <div class="space-y-4 text-gray-600 font-bold text-sm mb-10 italic">
-                        <p>Privacy Guarantee</p>
-                        <p>100% Undetectable</p>
-                        <p>Supports Canvas, Brightspace, etc…⭐</p>
-                        <p>Unlimited Questions</p>
-                        <p class="text-indigo-600">Super Charge ⚡</p>
-                    </div>
-                    <button class="w-full py-4 rounded-2xl bg-slate-900 text-white font-bold hover:bg-black transition italic">Get Started 50% Off</button>
-                </div>
-            </div>
-            <p class="text-center mt-16 text-gray-400 font-black italic">Invisible AI for Proctored Exams.</p>
-        </div>
-    </section>
-
-    <section id="faq" class="py-32 px-6 max-w-4xl mx-auto">
-        <h2 class="text-5xl font-extrabold italic text-center mb-16 italic">FAQ</h2>
-        <div class="space-y-4">
-            <details class="group p-8 rounded-3xl bg-slate-50 border border-transparent hover:border-indigo-100 cursor-pointer">
-                <summary class="text-xl font-bold flex justify-between items-center italic">Is it detectable? <span class="text-indigo-600">+</span></summary>
-                <p class="pt-6 text-gray-500 font-medium">No. CheatBuddy runs as an external overlay. It does not inject code into the webpage, so LMS platforms cannot detect its presence.</p>
+    <section class="max-w-3xl mx-auto px-10 py-20">
+        <h2 class="text-3xl font-bold mb-10 text-center">FAQ</h2>
+        <div class="space-y-6">
+            <details class="glass p-6 rounded-2xl cursor-pointer">
+                <summary class="font-bold">How is it undetectable?</summary>
+                <p class="mt-4 text-gray-400 text-sm">Our app runs as an overlay that is invisible to browser-based screen recorders and proctoring software.</p>
+            </details>
+            <details class="glass p-6 rounded-2xl cursor-pointer">
+                <summary class="font-bold">Which apps are supported?</summary>
+                <p class="mt-4 text-gray-400 text-sm">CheatBuddy works on Chrome, Safari, Firefox, and even standalone desktop applications.</p>
             </details>
         </div>
     </section>
 
-    <footer class="bg-white border-t border-gray-100 py-20 px-6">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 text-sm">
-            <div>
-                <div class="flex items-center gap-2 mb-4">
-                    <img src="logo.png" class="h-6 w-6">
-                    <span class="font-black text-xl italic">CheatBuddy</span>
-                </div>
-                <p class="text-gray-400 font-medium italic leading-relaxed">AI-Powered Assistant for Online Exams.</p>
-            </div>
-            <div>
-                <h4 class="font-black mb-6 uppercase tracking-widest text-[10px] text-gray-400">Product</h4>
-                <ul class="space-y-4 font-bold italic">
-                    <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
-                    <li><a href="#" class="hover:text-indigo-600">Chrome Extension</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-black mb-6 uppercase tracking-widest text-[10px] text-gray-400">Legal</h4>
-                <ul class="space-y-4 font-bold italic">
-                    <li><a href="terms.html" class="hover:text-indigo-600">Terms of Service</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-gray-50 text-center">
-            <p class="text-gray-400 text-xs font-bold uppercase tracking-widest">© 2026 CheatBuddy. All rights reserved.</p>
-        </div>
-    </footer>
-
+    <script>
+        const navBtn = document.getElementById('nav-btn');
+        const heroBtn = document.getElementById('hero-btn');
+        const platform = window.navigator.platform.toLowerCase();
+        
+        if (platform.includes('win')) {
+            navBtn.innerText = 'Get for Windows';
+            heroBtn.innerText = 'Get for Windows';
+        } else if (platform.includes('mac')) {
+            navBtn.innerText = 'Get for Mac';
+            heroBtn.innerText = 'Get for Mac';
+        }
+    </script>
 </body>
 </html>
