@@ -12,10 +12,9 @@
         .cheat-blue { background: #4f46e5; }
         .btn-shadow { box-shadow: 0 20px 40px rgba(79, 70, 229, 0.2); }
         .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid #f3f4f6; }
-        .step-card { border: 1px solid #f3f4f6; border-radius: 32px; transition: all 0.3s ease; background: #fafbff; }
-        .step-card:hover { transform: translateY(-5px); border-color: #4f46e5; }
-        .pricing-card { border: 1px solid #f3f4f6; border-radius: 40px; transition: all 0.3s ease; background: white; }
-        .pricing-card:hover { border-color: #4f46e5; transform: translateY(-8px); box-shadow: 0 30px 60px rgba(0,0,0,0.05); }
+        .step-card { border: 1px solid #f3f4f6; border-radius: 48px; background: #fafbff; height: 100%; transition: all 0.3s; }
+        .step-card:hover { border-color: #4f46e5; background: #ffffff; transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.03); }
+        .faq-box { border-bottom: 1px solid #f3f4f6; }
     </style>
 </head>
 <body>
@@ -28,12 +27,12 @@
         <div class="hidden md:flex gap-10 font-bold text-gray-400 text-[11px] uppercase tracking-[0.2em]">
             <a href="#how" class="hover:text-indigo-600">How It Works</a>
             <a href="#pricing" class="hover:text-indigo-600">Pricing</a>
-            <a href="#" class="hover:text-indigo-600">Extension</a>
+            <a href="#faq" class="hover:text-indigo-600">FAQ</a>
         </div>
         <button class="cheat-blue text-white px-6 py-2.5 rounded-xl font-bold text-xs btn-shadow">Dashboard</button>
     </nav>
 
-    <section class="pt-64 pb-20 px-6 text-center">
+    <section class="pt-64 pb-32 px-6 text-center">
         <h1 class="text-7xl md:text-[95px] font-extrabold tracking-tighter leading-[0.9] mb-8">
             Instant <span class="text-indigo-600">Invisible</span><br>Homework Help
         </h1>
@@ -43,19 +42,108 @@
         </a>
     </section>
 
-    <section id="how" class="py-32 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-20">
-            <h2 class="text-5xl font-extrabold mb-4">How It Works</h2>
-            <p class="text-gray-400 font-medium">From zero to solved in under 15 seconds.</p>
+    <section id="how" class="py-32 px-6 max-w-[1400px] mx-auto">
+        <div class="text-center mb-24">
+            <h2 class="text-6xl font-extrabold mb-4 tracking-tight">How It Works</h2>
+            <p class="text-gray-400 text-xl">From zero to solved in under 15 seconds.</p>
         </div>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="step-card p-10">
-                <div class="w-12 h-12 cheat-blue text-white rounded-2xl flex items-center justify-center font-bold text-xl mb-8">1</div>
-                <h3 class="text-2xl font-extrabold mb-4 uppercase tracking-tight">Activate</h3>
-                <p class="text-gray-500 leading-relaxed">Press <span class="font-black text-indigo-600">CMD + K</span> (Mac) or <span class="font-black text-indigo-600">CTRL + K</span> (Windows) to instantly toggle the invisible overlay.</p>
+        <div class="grid md:grid-cols-3 gap-10">
+            <div class="step-card p-16">
+                <span class="text-indigo-600 font-black text-6xl opacity-20">01</span>
+                <h3 class="text-3xl font-extrabold mt-8 mb-6 uppercase tracking-tighter italic">Activate</h3>
+                <p class="text-gray-500 text-lg leading-relaxed">Press <span class="text-indigo-600 font-bold">CMD + K</span> to toggle the invisible overlay. It stays 100% hidden from screen sharing and proctors.</p>
             </div>
-            <div class="step-card p-10">
-                <div class="w-12 h-12 cheat-blue text-white rounded-2xl flex items-center justify-center font-bold text-xl mb-8">2</div>
-                <h3 class="text-2xl font-extrabold mb-4 uppercase tracking-tight">Capture</h3>
-                <p class="text-gray-500 leading-relaxed">Use the <span class="font-black text-indigo-600">Screenshot Tool</span> to highlight any question, graph, or diagram on your screen.</p>
+            <div class="step-card p-16">
+                <span class="text-indigo-600 font-black text-6xl opacity-20">02</span>
+                <h3 class="text-3xl font-extrabold mt-8 mb-6 uppercase tracking-tighter italic">Capture</h3>
+                <p class="text-gray-500 text-lg leading-relaxed">Use the built-in <span class="text-indigo-600 font-bold">Screenshot Tool</span> to highlight your question. Works on graphs, text, and diagrams.</p>
             </div>
+            <div class="step-card p-16">
+                <span class="text-indigo-600 font-black text-6xl opacity-20">03</span>
+                <h3 class="text-3xl font-extrabold mt-8 mb-6 uppercase tracking-tighter italic">Solve</h3>
+                <p class="text-gray-500 text-lg leading-relaxed">Wait <span class="text-indigo-600 font-bold">3 Seconds</span>. A detailed, step-by-step solution appears right on your screen in a phantom window.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 bg-[#fcfdff] border-y border-gray-50">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-5xl font-extrabold mb-12 italic text-indigo-600 tracking-tight">Try our AI Engine</h2>
+            <div class="bg-white p-12 rounded-[48px] shadow-sm border border-gray-100 text-left relative cursor-pointer" 
+                 ondblclick="document.getElementById('sol').classList.remove('hidden')">
+                <div class="absolute top-8 right-10 bg-indigo-50 text-indigo-600 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em]">Double Click To Solve</div>
+                <div class="bg-gray-50 rounded-3xl p-8 mb-8 flex justify-center">
+                    <img src="https://static.studychannel.pearsonprd.tech/courses/college-algebra/thumbnails/502ec5d5-a249-4e5d-a3db-38f6db692d32" class="max-h-80 rounded-xl" alt="Algebra Graph">
+                </div>
+                <h3 class="text-2xl font-extrabold mb-4 italic leading-tight">Using the graph, determine the domain and range of the function.</h3>
+                <div id="sol" class="hidden p-8 bg-indigo-600 text-white rounded-3xl font-bold text-xl animate-pulse">
+                    🚀 AI Analysis: <br>
+                    Domain: (-∞, ∞) <br>
+                    Range: [-4, ∞)
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="py-24 bg-white overflow-hidden text-center">
+        <p class="font-black text-gray-300 text-xs uppercase tracking-[0.4em] mb-12">Featured On</p>
+        <div class="flex flex-wrap justify-center gap-20 items-center opacity-20 grayscale font-black text-4xl">
+            <span>FORBES</span><span>BBC</span><span>WIRED</span><span>THE VERGE</span><span>TECHCRUNCH</span>
+        </div>
+    </div>
+
+    <section id="pricing" class="py-40 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-24">
+            <h2 class="text-7xl font-extrabold mb-6 italic tracking-tighter">Pricing</h2>
+            <div class="inline-block bg-yellow-100 text-yellow-700 px-8 py-2.5 rounded-full text-sm font-black">⚡ 50% OFF LIMITED TIME</div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8 items-center">
+            <div class="border border-gray-100 p-12 rounded-[48px] text-center bg-white">
+                <h3 class="text-2xl font-bold italic mb-6">Weekly</h3>
+                <div class="text-5xl font-black mb-8">$4.99</div>
+                <button class="w-full py-5 rounded-2xl bg-gray-900 text-white font-bold">Select Plan</button>
+            </div>
+            <div class="border-4 border-indigo-600 p-12 rounded-[48px] text-center bg-white scale-110 shadow-2xl shadow-indigo-100 relative">
+                <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-indigo-600 text-white px-6 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest">Most Popular</div>
+                <h3 class="text-2xl font-bold italic mb-6 text-indigo-600">Monthly</h3>
+                <div class="text-6xl font-black mb-8">$9.99</div>
+                <button class="w-full py-6 rounded-2xl cheat-blue text-white font-black text-xl btn-shadow">Get Started</button>
+            </div>
+            <div class="border border-gray-100 p-12 rounded-[48px] text-center bg-white">
+                <h3 class="text-2xl font-bold italic mb-6">Annual</h3>
+                <div class="text-5xl font-black mb-8">$59.99</div>
+                <button class="w-full py-5 rounded-2xl bg-gray-900 text-white font-bold">Select Plan</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-40 px-6 max-w-4xl mx-auto">
+        <h2 class="text-5xl font-extrabold text-center mb-20 italic text-indigo-600 tracking-tight">FAQ</h2>
+        <div class="space-y-2">
+            <details class="group faq-box py-8">
+                <summary class="text-xl font-bold flex justify-between items-center cursor-pointer list-none">Is this detectable by Canvas? <span class="text-indigo-600">+</span></summary>
+                <p class="pt-6 text-gray-500 leading-relaxed">No. CheatBuddy runs as an external overlay. It does not inject code into the webpage, so LMS platforms cannot detect its presence.</p>
+            </details>
+            <details class="group faq-box py-8">
+                <summary class="text-xl font-bold flex justify-between items-center cursor-pointer list-none">How do I get the extension? <span class="text-indigo-600">+</span></summary>
+                <p class="pt-6 text-gray-500 leading-relaxed">After purchase, you will be redirected to our dashboard where you can download the extension and view your unique license key.</p>
+            </details>
+            <details class="group faq-box py-8">
+                <summary class="text-xl font-bold flex justify-between items-center cursor-pointer list-none">Is there a free trial? <span class="text-indigo-600">+</span></summary>
+                <p class="pt-6 text-gray-500 leading-relaxed">We don't offer a trial, but we have a weekly plan so you can test the power of CheatBuddy without a long commitment.</p>
+            </details>
+        </div>
+    </section>
+
+    <footer class="bg-[#0b0f19] text-white py-32 px-8 text-center">
+        <div class="max-w-7xl mx-auto">
+            <img src="logo.png" class="h-10 mx-auto mb-8 grayscale invert opacity-50" alt="C">
+            <div class="flex justify-center gap-12 text-sm font-bold text-gray-500 mb-12">
+                <a href="#">Support</a><a href="#">Privacy</a><a href="#">Terms</a>
+            </div>
+            <p class="text-gray-600 text-xs font-black uppercase tracking-[0.4em]">© 2026 CheatBuddy.ai — All Rights Reserved</p>
+        </div>
+    </footer>
+
+</body>
+</html>
