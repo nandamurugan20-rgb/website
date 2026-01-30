@@ -7,7 +7,7 @@ export default function CheatBuddyLanding() {
   const [typedAnswer, setTypedAnswer] = useState('');
   const [showAnswer, setShowAnswer] = useState(false);
 
-  // Typing animation for the demo
+  // Typing animation for the Hero Demo
   useEffect(() => {
     if (showAnswer) {
       const answer = '2x';
@@ -35,30 +35,30 @@ export default function CheatBuddyLanding() {
     {
       title: 'Multiple Choice',
       description: 'Instant answers for MC questions',
-      example: 'What is photosynthesis?',
-      options: ['A) Respiration', 'B) Light conversion', 'C) Cell division', 'D) Protein synthesis'],
-      correct: 1,
+      example: 'What is the derivative of (x + 1)² with respect to x?',
+      options: ['A. 2x² + 4x - 2', 'B. x² + 2x + 1', 'C. 2x + 2', 'D. 2x² - 4x + 2'],
+      correct: 2,
     },
     {
       title: 'Multiple Select',
-      description: 'Handle complex selections',
-      example: 'Select all organelles:',
-      options: ['Mitochondria', 'Ribosome', 'Water', 'Nucleus'],
-      correct: [0, 1, 3],
+      description: 'Which organelles are involved in protein synthesis?',
+      options: ['A. Nucleus', 'B. Mitochondria', 'C. Ribosomes', 'D. Cell wall'],
+      correct: [0, 2],
     },
     {
       title: 'Fill in the Blank',
-      description: 'Text-based precision',
-      example: 'The _____ is the powerhouse of the cell',
-      answer: 'mitochondria',
+      description: 'The slope of the graph at x = 3 is ____.',
+      imagePlaceholder: true,
+      answer: '6',
     },
     {
       title: 'Matching',
-      description: 'Pattern recognition',
+      description: 'Match each molecule with its role in photosynthesis:',
       pairs: [
-        ['Chloroplast', 'Photosynthesis'],
-        ['Nucleus', 'DNA Storage'],
-        ['Ribosome', 'Protein Synthesis'],
+        ['CO₂', 'Carbon Fixation'],
+        ['H₂O', 'Electron Donor'],
+        ['O₂', 'Byproduct'],
+        ['C₆H₁₂O₆', 'Energy Storage'],
       ],
     },
   ];
@@ -67,236 +67,119 @@ export default function CheatBuddyLanding() {
     {
       icon: <EyeOff className="w-8 h-8" />,
       title: 'Invisible Mode',
-      description: 'Completely hidden during screenshares and recordings. Undetectable by professors.',
-      color: 'from-blue-600 to-cyan-600',
+      description: 'Completely invisible, even over screenshare. Perfect for proctored exams.',
+      color: 'from-indigo-600 to-purple-600',
     },
     {
       icon: <Eye className="w-8 h-8" />,
       title: 'Sneaky Mode',
-      description: 'Minimalist loading interface for in-person use. Looks like a calculator.',
-      color: 'from-cyan-600 to-blue-500',
+      description: 'A small, subtle loading indicator for in-person exams. Stays out of sight.',
+      color: 'from-blue-600 to-indigo-600',
     },
     {
       icon: <BookOpen className="w-8 h-8" />,
       title: 'Homework Mode',
-      description: 'Full-featured UI for study sessions and practice. Learn while you work.',
-      color: 'from-blue-500 to-cyan-500',
-    },
-  ];
-
-  const faqs = [
-    {
-      q: 'How does CheatBuddy AI stay undetectable?',
-      a: 'Our advanced overlay technology runs outside the browser, making it invisible to screen capture, LockDown Browser, and proctoring software. We use machine learning to adapt to detection patterns.',
-    },
-    {
-      q: 'What platforms does it work with?',
-      a: 'CheatBuddy AI works with Canvas, Blackboard, D2L, McGraw Hill, Pearson, Google Classroom, and any web-based testing platform. Our OCR technology reads questions from any interface.',
-    },
-    {
-      q: 'Is this legal to use?',
-      a: 'CheatBuddy AI is a study tool designed for practice and learning. Users are responsible for following their institution\'s academic integrity policies. We recommend using Homework Mode for legitimate study purposes.',
-    },
-    {
-      q: 'How accurate are the answers?',
-      a: 'Our AI achieves 95%+ accuracy across math, science, humanities, and technical subjects. For maximum reliability, we source answers from multiple AI models and verify against academic databases.',
-    },
-    {
-      q: 'Can I get caught using this?',
-      a: 'When used in Invisible Mode, CheatBuddy AI leaves no digital footprint. However, unusual answer patterns or behavior may still raise suspicion. Use responsibly and vary your response patterns.',
+      description: 'On-screen loading and full UI for when you are doing standard homework.',
+      color: 'from-cyan-600 to-blue-600',
     },
   ];
 
   const platforms = [
-    { name: 'Canvas', logo: 'C' },
-    { name: 'Blackboard', logo: 'Bb' },
+    { name: 'Canvas', logo: 'Canvas' },
+    { name: 'Blackboard', logo: 'Blackboard' },
     { name: 'D2L', logo: 'D2L' },
-    { name: 'McGraw Hill', logo: 'MH' },
-    { name: 'Google Classroom', logo: 'GC' },
+    { name: 'McGraw Hill', logo: 'McGraw Hill' },
+    { name: 'Google Classroom', logo: 'Classroom' },
+    { name: 'Edulastic', logo: 'Edulastic' },
+  ];
+
+  const faqs = [
+    {
+      q: 'Is CheatBuddy really undetectable?',
+      a: 'Yes! CheatBuddy AI has zero visual footprint, does not interfere with browser tabs, and operates entirely in the background outside of browser-level detection.',
+    },
+    {
+      q: 'What types of questions can CheatBuddy answer?',
+      a: 'We support everything from basic Multiple Choice to complex Math (Calculus, Statistics), Biology, Chemistry matching, and even essay-based prompts.',
+    },
+    {
+      q: 'How fast is CheatBuddy?',
+      a: 'Answers are generated in real-time. Most questions take less than 1.5 seconds to solve.',
+    },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50 text-slate-900 overflow-x-hidden">
-      {/* Ambient background effects */}
-      <div className="fixed inset-0 opacity-20 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" />
-        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-cyan-400 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
-        <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style={{ animationDelay: '4s' }} />
-      </div>
-
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased selection:bg-indigo-100 selection:text-indigo-700">
+      
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 border-b border-slate-200">
+      <nav className="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-white" />
+            <div className="flex items-center gap-2 group cursor-pointer">
+              <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white group-hover:rotate-12 transition-transform">
+                <Sparkles size={18} fill="currentColor" />
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-                CheatBuddy AI
-              </span>
+              <span className="text-xl font-bold tracking-tight text-slate-900">cheatbuddy.ai</span>
             </div>
 
-            {/* Desktop Nav */}
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#how-it-works" className="text-slate-600 hover:text-slate-900 transition-colors">How It Works</a>
-              <a href="#undetectable" className="text-slate-600 hover:text-slate-900 transition-colors">Undetectable</a>
-              <a href="#pricing" className="text-slate-600 hover:text-slate-900 transition-colors">Pricing</a>
-              <button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg font-medium hover:scale-105 transition-transform">
+            <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+              <a href="#how-it-works" className="hover:text-indigo-600 transition-colors">How It Works</a>
+              <a href="#undetectable" className="hover:text-indigo-600 transition-colors">Undetectable</a>
+              <a href="#pricing" className="hover:text-indigo-600 transition-colors">Pricing</a>
+              <button className="px-5 py-2.5 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 hover:shadow-lg transition-all active:scale-95">
                 Dashboard
               </button>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden">
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2 text-slate-600">
               {mobileMenuOpen ? <X /> : <Menu />}
             </button>
           </div>
-
-          {/* Mobile Menu */}
-          {mobileMenuOpen && (
-            <div className="md:hidden py-4 space-y-4 border-t border-slate-200">
-              <a href="#how-it-works" className="block text-slate-600 hover:text-slate-900">How It Works</a>
-              <a href="#undetectable" className="block text-slate-600 hover:text-slate-900">Undetectable</a>
-              <a href="#pricing" className="block text-slate-600 hover:text-slate-900">Pricing</a>
-              <button className="w-full px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg font-medium">
-                Dashboard
-              </button>
-            </div>
-          )}
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative px-4 sm:px-6 lg:px-8 pt-20 pb-32">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-8 mb-16">
-            <div className="inline-flex items-center space-x-2 px-4 py-2 bg-blue-900/30 border border-blue-500/30 rounded-full text-sm backdrop-blur-sm">
-              <Zap className="w-4 h-4 text-blue-400" />
-              <span className="text-blue-300">Launching February 2026</span>
-            </div>
-            
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
-              Instant <span className="bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-500 bg-clip-text text-transparent">Invisible</span>
-              <br />Homework Help
+      <section className="relative pt-20 pb-32 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-16">
+          <div className="flex-1 text-center lg:text-left">
+            <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1] mb-6">
+              Instant <span className="text-indigo-600">Invisible</span><br />Homework Help
             </h1>
-            
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Get AI-powered answers to any quiz, test, or homework question. Completely undetectable by proctoring software.
+            <p className="text-xl text-slate-600 mb-10 max-w-2xl">
+              In Person, With Screenshare, Wherever You Need It. The ultimate AI sidekick for every exam type.
             </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl font-semibold text-lg hover:scale-105 transition-all shadow-lg shadow-blue-500/50 text-white">
-                <span className="relative z-10">Get Started - 50% Off</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <button className="px-10 py-4 bg-indigo-600 text-white rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-indigo-200 transition-all active:scale-95">
+                Get Started 50% Off
               </button>
             </div>
-
-            <div className="flex items-center justify-center gap-6 text-sm text-slate-600">
-              <div className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-green-500" />
-                <span>7-day money back guarantee</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-green-500" />
-                <span>Cancel anytime</span>
-              </div>
+            <div className="mt-8 flex items-center justify-center lg:justify-start gap-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">
+              <span>✓ Satisfaction Guaranteed</span>
+              <span>✓ Cancel Anytime</span>
+              <span>✓ 24/7 Support</span>
             </div>
           </div>
 
-          {/* Visual Demo */}
-          <div id="how-it-works" className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold">See It In Action</h2>
-              <p className="text-slate-600 text-lg">
-                CheatBuddy AI analyzes your questions in real-time and provides instant, accurate answers. Our advanced OCR reads questions from any format - multiple choice, essays, math problems, and more.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-blue-100 border border-blue-300 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <span className="text-blue-600 font-bold">1</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Capture Question</h3>
-                    <p className="text-slate-600 text-sm">Screenshot or paste any question</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-cyan-100 border border-cyan-300 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <span className="text-cyan-600 font-bold">2</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">AI Processing</h3>
-                    <p className="text-slate-600 text-sm">Our AI analyzes and solves instantly</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-blue-100 border border-blue-300 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <span className="text-blue-600 font-bold">3</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Get Answer</h3>
-                    <p className="text-slate-600 text-sm">Receive accurate solution with explanation</p>
-                  </div>
-                </div>
+          {/* Demo Mockup */}
+          <div className="flex-1 w-full max-w-lg">
+            <div className="bg-white rounded-3xl shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] border border-slate-200 p-6 sm:p-8 relative overflow-hidden">
+              <div className="flex items-center gap-2 mb-8">
+                <div className="w-3 h-3 rounded-full bg-red-400" />
+                <div className="w-3 h-3 rounded-full bg-amber-400" />
+                <div className="w-3 h-3 rounded-full bg-emerald-400" />
               </div>
-            </div>
-
-            {/* Quiz Demo */}
-            <div className="relative">
-              <div className="bg-white backdrop-blur-xl rounded-2xl p-8 border border-slate-200 shadow-2xl">
-                <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-lg font-semibold">Question 1 of 10</h3>
-                  <div className="flex items-center gap-2 text-sm text-slate-600">
-                    <Clock className="w-4 h-4" />
-                    <span>2:34</span>
-                  </div>
+              <div className="space-y-6">
+                <div className="pb-6 border-b border-slate-100">
+                  <h3 className="text-sm font-bold text-slate-400 uppercase mb-4 tracking-wider">Question 7</h3>
+                  <p className="text-xl font-medium text-slate-800">What is the derivative of x^2</p>
                 </div>
-
-                <div className="space-y-6">
-                  <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
-                    <p className="text-lg mb-2">What is the derivative of x²?</p>
-                    <div className="text-slate-600 text-sm">Show your work for full credit</div>
-                  </div>
-
-                  <div className="space-y-3">
-                    <div className="bg-white rounded-lg p-4 border border-slate-200">
-                      <input 
-                        type="text" 
-                        placeholder="Type your answer..."
-                        value={typedAnswer}
-                        className="w-full bg-transparent outline-none text-slate-900 placeholder-slate-400"
-                        readOnly
-                      />
-                    </div>
-                    
-                    {showAnswer && typedAnswer && (
-                      <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-300 rounded-lg p-4 animate-fadeIn">
-                        <div className="flex items-center gap-2 text-green-600 mb-2">
-                          <Check className="w-5 h-5" />
-                          <span className="font-semibold">CheatBuddy AI Solution</span>
-                        </div>
-                        <p className="text-sm text-slate-700">The derivative of x² is 2x using the power rule.</p>
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="flex justify-between">
-                    <button className="px-4 py-2 text-slate-600 hover:text-slate-900 transition-colors">
-                      Previous
-                    </button>
-                    <button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg font-medium hover:scale-105 transition-transform">
-                      Next Question
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating Badge */}
-              <div className="absolute -top-4 -right-4 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full px-4 py-2 shadow-lg animate-pulse">
-                <div className="flex items-center gap-2 text-white">
-                  <Shield className="w-4 h-4" />
-                  <span className="text-sm font-semibold">95% Accurate</span>
+                <div className="relative group">
+                   <div className="w-full h-12 border-2 border-slate-100 rounded-xl px-4 flex items-center text-indigo-600 font-mono text-lg transition-all group-hover:border-indigo-200">
+                    {typedAnswer}<span className="w-0.5 h-6 bg-indigo-400 animate-pulse ml-1" />
+                   </div>
+                   <div className="absolute -right-2 -bottom-2 bg-indigo-600 text-white p-2 rounded-lg shadow-xl animate-bounce">
+                     <Sparkles size={16} />
+                   </div>
                 </div>
               </div>
             </div>
@@ -304,245 +187,55 @@ export default function CheatBuddyLanding() {
         </div>
       </section>
 
-      {/* Feature Grid - Bento Style */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-blue-50/50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Works With Every Question Type</h2>
-            <p className="text-slate-600 text-lg">From multiple choice to complex calculations - we've got you covered</p>
+      {/* Platforms Bar */}
+      <div className="bg-white border-y border-slate-100 py-12">
+        <div className="max-w-7xl mx-auto px-4">
+          <p className="text-center text-sm font-bold text-slate-400 uppercase tracking-widest mb-10">Works On:</p>
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all">
+            {platforms.map(p => <span key={p.name} className="text-lg font-black text-slate-900">{p.logo}</span>)}
           </div>
+        </div>
+      </div>
 
+      {/* Bento Feature Grid */}
+      <section id="how-it-works" className="py-24 px-4 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">Ace Every Question</h2>
+            <p className="text-slate-500">CheatBuddy scores 98% on average for every type of question</p>
+          </div>
           <div className="grid md:grid-cols-2 gap-6">
-            {features.map((feature, idx) => (
-              <div 
-                key={idx}
-                className="group bg-white backdrop-blur-xl rounded-2xl p-8 border border-slate-200 hover:border-blue-300 transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/10"
-              >
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Check className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold">{feature.title}</h3>
-                    <p className="text-slate-600 text-sm">{feature.description}</p>
-                  </div>
-                </div>
-
-                {feature.options && (
+            {features.map((f, i) => (
+              <div key={i} className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                <h4 className="text-xs font-bold text-slate-400 uppercase mb-6 tracking-widest">{f.title}</h4>
+                <p className="text-slate-800 font-medium mb-6">{f.description}</p>
+                {f.options && (
                   <div className="space-y-3">
-                    <p className="text-slate-700 mb-4">{feature.example}</p>
-                    {feature.options.map((option, i) => (
-                      <div 
-                        key={i}
-                        className={`p-3 rounded-lg border ${
-                          (typeof feature.correct === 'number' && feature.correct === i) ||
-                          (Array.isArray(feature.correct) && feature.correct.includes(i))
-                            ? 'bg-green-50 border-green-300'
-                            : 'bg-slate-50 border-slate-200'
-                        }`}
-                      >
-                        {option}
+                    {f.options.map((opt, idx) => (
+                      <div key={idx} className={`flex items-center gap-3 p-3 rounded-xl border ${Array.isArray(f.correct) ? (f.correct.includes(idx) ? 'bg-indigo-50 border-indigo-200' : 'bg-slate-50 border-slate-100') : (f.correct === idx ? 'bg-indigo-50 border-indigo-200' : 'bg-slate-50 border-slate-100')}`}>
+                        <div className={`w-5 h-5 rounded-full border-2 ${Array.isArray(f.correct) ? (f.correct.includes(idx) ? 'bg-indigo-600 border-indigo-600' : 'border-slate-300') : (f.correct === idx ? 'bg-indigo-600 border-indigo-600' : 'border-slate-300')}`} />
+                        <span className="text-sm text-slate-600">{opt}</span>
                       </div>
                     ))}
                   </div>
                 )}
-
-                {feature.answer && (
-                  <div className="space-y-3">
-                    <p className="text-slate-700 mb-4">{feature.example}</p>
-                    <div className="p-3 bg-green-50 border border-green-300 rounded-lg">
-                      {feature.answer}
-                    </div>
-                  </div>
-                )}
-
-                {feature.pairs && (
+                {f.pairs && (
                   <div className="space-y-2">
-                    {feature.pairs.map((pair, i) => (
-                      <div key={i} className="flex items-center gap-4">
-                        <div className="flex-1 p-3 bg-slate-50 border border-slate-200 rounded-lg text-sm">
-                          {pair[0]}
-                        </div>
-                        <div className="text-slate-400">→</div>
-                        <div className="flex-1 p-3 bg-slate-50 border border-slate-200 rounded-lg text-sm">
-                          {pair[1]}
-                        </div>
+                    {f.pairs.map((p, idx) => (
+                      <div key={idx} className="flex justify-between items-center bg-slate-50 p-3 rounded-xl border border-slate-100">
+                        <span className="text-sm font-bold text-indigo-600">{p[0]}</span>
+                        <ChevronDown size={14} className="text-slate-300 -rotate-90" />
+                        <span className="text-sm text-slate-600">{p[1]}</span>
                       </div>
                     ))}
                   </div>
                 )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Detection Modes */}
-      <section id="undetectable" className="px-4 sm:px-6 lg:px-8 py-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Choose Your Stealth Level</h2>
-            <p className="text-slate-600 text-lg">Adapt to any testing environment with our three detection modes</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {modes.map((mode, idx) => (
-              <div 
-                key={idx}
-                className="group relative bg-white backdrop-blur-xl rounded-2xl p-8 border border-slate-200 hover:border-blue-300 transition-all hover:scale-105"
-              >
-                <div className={`absolute inset-0 bg-gradient-to-br ${mode.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity`} />
-                
-                <div className={`w-16 h-16 bg-gradient-to-br ${mode.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-white`}>
-                  {mode.icon}
-                </div>
-
-                <h3 className="text-2xl font-bold mb-3">{mode.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{mode.description}</p>
-
-                <div className="mt-6 pt-6 border-t border-slate-200">
-                  <button className="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
-                    Learn More
-                    <ChevronDown className="w-4 h-4 rotate-[-90deg]" />
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Trust Signals - Works On */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-blue-50/50">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-center text-2xl font-bold mb-12">Works Seamlessly With</h2>
-          
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            {platforms.map((platform, idx) => (
-              <div 
-                key={idx}
-                className="group flex flex-col items-center gap-3"
-              >
-                <div className="w-20 h-20 bg-white border border-slate-200 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:border-blue-300 transition-all">
-                  <span className="text-2xl font-bold text-slate-600 group-hover:text-blue-600 transition-colors">
-                    {platform.logo}
-                  </span>
-                </div>
-                <span className="text-sm text-slate-600">{platform.name}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <p className="text-slate-600">+ Any web-based testing platform</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing */}
-      <section id="pricing" className="px-4 sm:px-6 lg:px-8 py-20">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
-            <p className="text-slate-600 text-lg">Get started today with 50% off your first month</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Monthly */}
-            <div className="bg-white backdrop-blur-xl rounded-2xl p-8 border border-slate-200">
-              <h3 className="text-2xl font-bold mb-2">Monthly</h3>
-              <div className="flex items-baseline gap-2 mb-6">
-                <span className="text-4xl font-bold">$19.99</span>
-                <span className="text-slate-500 line-through">$39.99</span>
-              </div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span>Unlimited questions</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span>All question types</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span>3 detection modes</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span>24/7 support</span>
-                </li>
-              </ul>
-              <button className="w-full px-6 py-3 bg-slate-100 border border-slate-200 rounded-xl font-semibold hover:bg-slate-200 transition-all">
-                Get Started
-              </button>
-            </div>
-
-            {/* Annual */}
-            <div className="relative bg-gradient-to-br from-blue-50 to-cyan-50 backdrop-blur-xl rounded-2xl p-8 border-2 border-blue-300 shadow-2xl shadow-blue-500/10">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-full text-sm font-semibold">
-                Best Value
-              </div>
-              
-              <h3 className="text-2xl font-bold mb-2">Annual</h3>
-              <div className="flex items-baseline gap-2 mb-6">
-                <span className="text-4xl font-bold">$9.99</span>
-                <span className="text-slate-600">/month</span>
-              </div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span>Everything in Monthly</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span>Priority AI processing</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span>Advanced analytics</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span>Save $120/year</span>
-                </li>
-              </ul>
-              <button className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-xl font-semibold hover:scale-105 transition-transform shadow-lg">
-                Get Started
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-blue-50/50">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-            <p className="text-slate-600 text-lg">Everything you need to know about CheatBuddy AI</p>
-          </div>
-
-          <div className="space-y-4">
-            {faqs.map((faq, idx) => (
-              <div 
-                key={idx}
-                className="bg-white backdrop-blur-xl rounded-xl border border-slate-200 overflow-hidden"
-              >
-                <button
-                  onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-slate-50 transition-colors"
-                >
-                  <span className="font-semibold text-lg pr-8">{faq.q}</span>
-                  <ChevronDown 
-                    className={`w-5 h-5 text-slate-600 flex-shrink-0 transition-transform ${
-                      openFaq === idx ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-                {openFaq === idx && (
-                  <div className="px-6 pb-6">
-                    <p className="text-slate-600 leading-relaxed">{faq.a}</p>
+                {f.imagePlaceholder && (
+                  <div className="mt-4 p-8 bg-slate-50 rounded-2xl border-2 border-dashed border-slate-200 flex flex-col items-center">
+                    <div className="w-full h-24 bg-gradient-to-r from-indigo-100 to-blue-100 rounded-lg mb-4 opacity-50 relative">
+                       <div className="absolute inset-0 flex items-center justify-center text-indigo-400 font-mono">f(x) = x³ - 2x</div>
+                    </div>
+                    <div className="w-20 h-8 bg-white rounded-lg border border-indigo-200 flex items-center justify-center font-bold text-indigo-600">{f.answer}</div>
                   </div>
                 )}
               </div>
@@ -551,82 +244,81 @@ export default function CheatBuddyLanding() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-br from-blue-50 to-cyan-50 backdrop-blur-xl rounded-3xl p-12 border border-blue-200 shadow-2xl">
-            <h2 className="text-4xl font-bold mb-4">Ready to Ace Your Next Test?</h2>
-            <p className="text-slate-600 text-lg mb-8">
-              Join thousands of students who are already getting better grades with CheatBuddy AI
-            </p>
-            <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-xl font-semibold text-lg hover:scale-105 transition-transform shadow-lg shadow-blue-500/50">
-              Start Free Trial - 50% Off
-            </button>
-            <p className="text-slate-600 text-sm mt-4">7-day money back guarantee • Cancel anytime</p>
+      {/* Undetectable Modes */}
+      <section id="undetectable" className="py-24 bg-white px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">100% Undetectable</h2>
+            <p className="text-slate-500">CheatBuddy is completely invisible over screenshare and in person</p>
+          </div>
+          <div className="grid lg:grid-cols-3 gap-8">
+            {modes.map((m, i) => (
+              <div key={i} className="relative group p-8 rounded-3xl border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/30 transition-all cursor-default">
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${m.color} flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform shadow-lg`}>
+                  {m.icon}
+                </div>
+                <h3 className="text-2xl font-bold mb-4">{m.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{m.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="py-24 bg-slate-50 px-4">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            {faqs.map((faq, i) => (
+              <div key={i} className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                <button 
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full p-6 text-left flex justify-between items-center hover:bg-slate-50"
+                >
+                  <span className="font-bold text-slate-800">{faq.q}</span>
+                  <ChevronDown className={`transition-transform ${openFaq === i ? 'rotate-180' : ''}`} />
+                </button>
+                {openFaq === i && <div className="px-6 pb-6 text-slate-500 leading-relaxed">{faq.a}</div>}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-100 border-t border-slate-200 px-4 sm:px-6 lg:px-8 py-12">
+      <footer className="bg-slate-900 text-white py-20 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            {/* Brand */}
-            <div className="md:col-span-2">
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-                  <Sparkles className="w-5 h-5 text-white" />
-                </div>
-                <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-                  CheatBuddy AI
-                </span>
-              </div>
-              <p className="text-slate-600 mb-4">
-                The smartest way to get homework help. Completely undetectable, incredibly accurate.
-              </p>
-            </div>
-
-            {/* Product */}
+          <div className="grid md:grid-cols-3 gap-12 border-b border-slate-800 pb-12 mb-12">
             <div>
-              <h4 className="font-semibold mb-4">Product</h4>
-              <ul className="space-y-2 text-slate-600">
-                <li><a href="#" className="hover:text-slate-900 transition-colors">Home</a></li>
-                <li><a href="#" className="hover:text-slate-900 transition-colors">Blog</a></li>
+              <div className="flex items-center gap-2 mb-6">
+                <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white">
+                  <Sparkles size={18} fill="currentColor" />
+                </div>
+                <span className="text-xl font-bold tracking-tight">cheatbuddy.ai</span>
+              </div>
+              <p className="text-slate-400">Invisible AI for Proctored Exams.</p>
+            </div>
+            <div>
+              <h5 className="font-bold mb-6">Product</h5>
+              <ul className="space-y-4 text-slate-400">
+                <li className="hover:text-white cursor-pointer transition-colors">Home</li>
+                <li className="hover:text-white cursor-pointer transition-colors">Pricing</li>
               </ul>
             </div>
-
-            {/* Legal */}
             <div>
-              <h4 className="font-semibold mb-4">Legal</h4>
-              <ul className="space-y-2 text-slate-600">
-                <li><a href="#" className="hover:text-slate-900 transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-slate-900 transition-colors">Terms of Service</a></li>
+              <h5 className="font-bold mb-6">Legal</h5>
+              <ul className="space-y-4 text-slate-400">
+                <li className="hover:text-white cursor-pointer transition-colors underline decoration-indigo-500/50">Privacy Policy</li>
+                <li className="hover:text-white cursor-pointer transition-colors underline decoration-indigo-500/50">Terms of Service</li>
               </ul>
             </div>
           </div>
-
-          <div className="pt-8 border-t border-slate-200 text-center text-slate-600 text-sm">
-            <p>© 2026 CheatBuddy AI. All rights reserved.</p>
+          <div className="text-center text-slate-500 text-sm">
+            © 2026 CheatBuddy. All rights reserved.
           </div>
         </div>
       </footer>
-
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .animate-fadeIn {
-          animation: fadeIn 0.5s ease-out;
-        }
-      `}</style>
     </div>
   );
 }
